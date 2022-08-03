@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-//@EntityScan("com.gmsk.model.Book")
+@EntityScan("com.gmsk.model.Book")
 @SpringBootApplication
 public class BasicWebApplication {
 
