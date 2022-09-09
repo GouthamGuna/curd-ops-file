@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>TestServlet</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <!--Login Action  -->
+  <servlet>
+  	<servlet-name>SubmitAction</servlet-name>
+  	<servlet-class>com.cerp.example.action.LoginAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>SubmitAction</servlet-name>
+  	<url-pattern>/submit</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Add Employee -->
+  <servlet>
+  	<servlet-name>AddEmployees</servlet-name>
+  	<servlet-class>com.cerp.example.action.AddEmployeeAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>AddEmployees</servlet-name>
+  	<url-pattern>/addemployee</url-pattern>
+  </servlet-mapping>
+  
+  <!-- View Employee's -->
+  <servlet>
+  	<servlet-name>ViewEmployees</servlet-name>
+  	<servlet-class>com.cerp.example.action.ListEmployees</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>ViewEmployees</servlet-name>
+  	<url-pattern>/viewemployee</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Edit Employee -->
+  <servlet>
+  	<servlet-name>EditEmployee</servlet-name>
+  	<servlet-class>com.cerp.example.action.EditEmployeeAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>EditEmployee</servlet-name>
+  	<url-pattern>/editemployee</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Update Employee -->
+  <servlet>
+  	<servlet-name>UpdateEmployee</servlet-name>
+  	<servlet-class>com.cerp.example.action.UpdateEmployeeAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>UpdateEmployee</servlet-name>
+  	<url-pattern>/updateemployee</url-pattern>
+  </servlet-mapping>
+  
+  <!-- Delete Employee -->
+  <servlet>
+  	<servlet-name>DeleteEmployee</servlet-name>
+  	<servlet-class>com.cerp.example.action.DeleteEmployeeAction</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>DeleteEmployee</servlet-name>
+  	<url-pattern>/deleteemployee</url-pattern>
+  </servlet-mapping>
+  
+  <!-- DB Connection -->
+  <context-param>
+  	<param-name>dbDriver</param-name>
+  	<param-value>com.mysql.cj.jdbc.Driver</param-value>
+  </context-param>
+  
+  <context-param>
+  		<param-name>dbURL</param-name>
+  		<param-value>jdbc:mysql://localhost:3306/springboot_demo</param-value>
+  </context-param>
+  
+  <context-param>
+  		<param-name>dbUser</param-name>
+  		<param-value>root</param-value>
+  </context-param>
+  
+  <context-param>
+  		<param-name>dbPassword</param-name>
+  		<param-value>root</param-value>
+  </context-param>
+</web-app>
