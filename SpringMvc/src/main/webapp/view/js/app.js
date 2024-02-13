@@ -9,3 +9,8 @@ console.log("init... JS");
     h1.textContent = 'Hello Lunar!'
     divContainer.appendChild(h1);
 })();
+
+function submitForm(){
+
+  
+}
