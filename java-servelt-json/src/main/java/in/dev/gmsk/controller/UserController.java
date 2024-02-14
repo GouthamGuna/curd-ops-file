@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(urlPatterns = {"/users"}, name = "UserController", description = "UserController return json.")
+@WebServlet(urlPatterns = {"/users.do"}, name = "UserController", description = "UserController return json.")
 public class UserController extends HttpServlet {
     private UserService userService = new UserServiceImpl();
 
@@ -20,7 +20,7 @@ public class UserController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         Gson gson = new Gson();
-        String userJson =gson.toJson(userService.getAllUserList());
+        String userJson = gson.toJson(userService.getAllUserList());
 
         PrintWriter printWriter = resp.getWriter();
         resp.setContentType("application/json");
