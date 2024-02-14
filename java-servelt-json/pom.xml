@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>in.dev.gmsk</groupId>
-    <artifactId>java-servelt-json</artifactId>
+    <artifactId>java-servlet-json</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>java-servelt-json Maven Webapp</name>
+    <name>java-servlet-json Maven Webapp</name>
     <url>https://gouthamguna.github.io/in/</url>
 
     <properties>
@@ -54,7 +54,6 @@
     </dependencies>
 
     <build>
-        <finalName>java-servelt-json</finalName>
         <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
             <plugins>
                 <plugin>
@@ -86,7 +85,17 @@
                     <artifactId>maven-deploy-plugin</artifactId>
                     <version>2.8.2</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.tomcat.maven</groupId>
+                    <artifactId>tomcat7-maven-plugin</artifactId>
+                    <version>2.2</version>
+                    <configuration>
+                        <path>/</path>
+                        <contextReloadable>true</contextReloadable>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
+        <finalName>Spring Mvc</finalName>
     </build>
 </project>
