@@ -1,36 +1,29 @@
 package in.dev.gmsk.controller;
 
-import java.io.IOException;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+@Controller
+public class LoginController {
 
-@WebServlet(urlPatterns = "/login.do")
-public class LoginController extends HttpServlet {
-
-	private static final long serialVersionUID = -4517510503159648432L;
-
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("views/jsp/index.jsp").forward(req, resp);
-		;
+	@RequestMapping(value = "/welcome")
+	@ResponseBody
+	public String sayHello() {
+		return "Hello World dummy";
 	}
 
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-		String userName = req.getParameter("userName");
-
-		System.out.println("userName : " + userName);
-
-		if (userName.equalsIgnoreCase("admin")) {
-			req.getRequestDispatcher("views/jsp/home.jsp").forward(req, resp);
-		} else {
-			resp.getWriter().print("Invaild UserName...");
-		}
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String showLoginPage() {
+		return "login";
 	}
 
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	public String handleUserLogin(ModelMap model, @RequestParam String name, @RequestParam String password) {
+		model.put("name", name);
+		return "welcome";
+	}
 }
