@@ -7,5 +7,7 @@
   </head>
   <body>
     Welcome ${name}
+    <br>
+    <a href="/blog/" style="align-content: flex-end;">Logout...</a>
   </body>
 </html>

@@ -1,5 +1,5 @@
 console.log("JS init...");
-
+/*
 document.getElementById("myAnchor").addEventListener("click", function (event) {
   event.preventDefault();
 
@@ -20,3 +20,9 @@ document.getElementById("myAnchor").addEventListener("click", function (event) {
     }
   );
 });
+*/
+
+// Disable the right-click context menu
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+
