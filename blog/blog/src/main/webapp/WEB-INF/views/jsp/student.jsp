@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog</title>
+    <title>Document</title>
     <link
       rel="shortcut icon"
       href="https://gouthamguna.github.io/in/favicon.ico"
@@ -11,12 +11,16 @@
     />
   </head>
   <body>
-    Welcome ${name} ...
-    <br />
-    <a href="/blog/student" style="align-content: flex-end"
-      >Get All Student List</a
-    >
-    <br />
-    <a href="/blog/" style="align-content: flex-end">Logout...</a>
+    <h1>Student List...</h1>
+    ${student_service}
+
+    <script>
+      (function () {
+        const response = fetch("/blog/student");
+        const data = response.json();
+
+        console.log(data);
+      })();
+    </script>
   </body>
 </html>
