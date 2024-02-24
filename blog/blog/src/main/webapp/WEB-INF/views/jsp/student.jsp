@@ -15,12 +15,14 @@
     ${student_service}
 
     <script>
-      (function () {
-        const response = fetch("/blog/student");
-        const data = response.json();
+      const URL = "http://localhost:9090/blog/student/?name=Saran";
 
-        console.log(data);
-      })();
+      fetch(URL)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .catch(console.error);
     </script>
   </body>
 </html>
