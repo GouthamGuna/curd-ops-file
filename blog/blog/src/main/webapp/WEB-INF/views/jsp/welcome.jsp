@@ -13,7 +13,7 @@
   <body>
     Welcome ${name} ...
     <br />
-    <a href="/blog/student" style="align-content: flex-end"
+    <a href="/blog/student/?name=Saran" style="align-content: flex-end"
       >Get All Student List</a
     >
     <br />
